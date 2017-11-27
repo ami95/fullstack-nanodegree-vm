@@ -24,3 +24,4 @@ untill I call session.commit'''
 session = DBSession()
 
 session.query(Restaurant).all()
+
