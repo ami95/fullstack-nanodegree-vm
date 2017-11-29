@@ -19,16 +19,21 @@ class webServerHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
             
-            if self.path.endswith("/delete")
+            if self.path.endswith("/delete"):   
                 restaurantIDPath = self.path.split("/")[2]
                 myRestaurantQuery = session.query(Restaurant).filter_by(id = 
                     restaurantIDPath).one()
-                output += ""
-                output += "<html><body>"
-                output += "<h1>Are you shure you want to delete %s ?</h1>" % myRestaurantQuery.name
-                output += "<input type='submit' value='Submit'>"
-                output += "</body></html>"
-                self.wfile.write(output)
+                if myRestaurantQuery != [] : 
+                    self.send_response(200)
+                    self.send_header('Content-type', 'text/html')
+                    self.end_headers()
+                    output = ""
+                    output += "<html><body>"
+                    output += "<h1>Are you shure you want to delete %s ?</h1>" % myRestaurantQuery.name
+                    output += "<form method='POST' enctype='multipart/form-data' action='/restaurants/%s/delete'>" % restaurantIDPath
+                    output += "<input type='submit' value='Delete'>"
+                    output += "</body></html>"
+                    self.wfile.write(output)
 
             if self.path.endswith("/edit"):
                 restaurantIDPath = self.path.split("/")[2]
@@ -102,20 +107,17 @@ class webServerHandler(BaseHTTPRequestHandler):
 
             if self.path.endswith("/delete"):
                 ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
-                if ctype == 'multipart/form-data':
-                    fields = cgi.parse_multipart(self.rfile, pdict)
-                    messagecontent = fields.get('newRestaurantName')
                 
                 restaurantIDPath = self.path.split("/")[2]
+
                 myRestaurantQuery = session.query(Restaurant).filter_by(id=
                     restaurantIDPath).one()
                 if myRestaurantQuery != []:
-                    myRestaurantQuery.name = messagecontent[0]
                     session.delete(myRestaurantQuery)
                     session.commit()
                     self.send_response(301)
                     self.send_header('Content-type', 'text/html')
-                    self.send_header('Location', 'restaurants')
+                    self.send_header('Location', '/restaurants')
                     self.end_headers()
                 return           
 
