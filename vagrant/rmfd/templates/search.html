@@ -44,14 +44,17 @@
 
     <div class="RezultateCautare">
         {% for u in users %}
+          {% if u == {} %}
+          <p>There are no results according to your criteria</p>
+              {% else %}
       <div class="IndividualUser">
           <img src={{u.url}} alt="Profile Pic" width="150" height="200" >
           <p>{{u.f_name}} {{u.s_name}}</p>
-
           <p>{{u.description}}</p>
           <input type="submit" value="Da"> <input type="submit" value="Nu"> <input type="submit" value="Vezi Profil">
       </div>
       <br><br>
+            {% endif %}
         {% endfor %}
     </div>
 
