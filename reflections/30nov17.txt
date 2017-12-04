@@ -1,0 +1,18 @@
+Lesson 2
+
+-create web-server in python
+-learn what GET and POST requests are & how to create code to handle them
+-implement all CRUD operations via web-pages and forms
+
+
+Lesson 3
+Goal--> develop a new web-server using a framework, to help me code more eficiently
+
+Overview: -learn basic components of a flask app(HelloWorld app)
+		  -connect to a DB using SQLAlchemy
+		  -templates(allow me to write html code separately from python code)
+		  -url_for(build URLs that we will use to navigate through the app)
+		  -create forms
+		  -use message flashing
+		  -JSON
+		  -styling with CSS

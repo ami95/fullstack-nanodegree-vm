@@ -1,0 +1,10 @@
+<html>
+<body>
+	<h1>Restaurants</h1>
+	<br><br>
+	{% for r in restaurants %}
+	<ul>{{r.id}}. {{r.name}}</ul><br>
+	{% endfor %}
+	<ul><a href=#>Add a new restaurant</a></ul>
+</body>
+</html>

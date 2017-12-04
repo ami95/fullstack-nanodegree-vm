@@ -23,27 +23,27 @@ def showAllRestaurants():
 @app.route('/<int:restaurant_id>/menu')
 def showAllMenuItems(restaurant_id):
 	output = "This page displays all menu items for a given restaurant"
-	return output
+	return render_template('menu.html', restaurant=restaurant, items=items)
 
 @app.route('/add_restaurant')
 def addRestaurant():
 	output = "Here you can add a new restaurant"
-	return output
+	return render_template('newRestaurant.html')
 
 @app.route('/<int:restaurant_id>/edit_restaurant')
 def editRestaurant(restaurant_id):
 	output = "Here you can edit a restaurants name"
-	return output	
+	return render_template('editRestaurant.html', restaurant = restaurant)	
 
 @app.route('/<int:restaurant_id>/delete_restaurant')
 def deleteRestaurant(restaurant_id):
 	output = "Here you will be asked if you are shure you want to delete a given restaurant"
-	return output	
+	return render_template('deleteRestaurant.html', restaurant = restaurant)
 
 @app.route('/<int:restaurant_id>/menu/add_menu_item')
 def addMenuItem(restaurant_id):
 	output = "Here you can add e new menu item"
-	return output	
+	return render_template('newMenuItem.html', restaurant = restaurant)	
 
 @app.route('/<int:restaurant_id>/menu/<int:item_id>/edit_menu_item')
 def editMenuItem(restaurant_id, item_id):

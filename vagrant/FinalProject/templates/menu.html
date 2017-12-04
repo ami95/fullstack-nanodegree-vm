@@ -1,0 +1,18 @@
+<html>
+<body>
+	<h2>Welcome to {{restaurant.name}}</h2><br>
+		<input type='submit' value='Add a new menu item'>
+		<a href=#>Go back to the restaurant list</a><br><br>
+		<h3>Menu:</h3>
+		{% for i in items %}
+		<ul>{{i.id}}. {{i.name}}</ul>
+		<ul>{{i.description}}</ul>
+		<ul>{{i.course}}</ul>
+		<ul>{{i.price}}</ul>
+		<br>
+		{% endfor %}
+
+	</form>
+	
+</body>
+</html>
