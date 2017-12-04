@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profilul Lui {{user2.username}}</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Profilul meu</a></li>
+        <li><a href="#">Pagina Principală</a></li>
+        <li><a href="#">Despre</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Bine ai venit {{user.f_name}} !</a></li>
+        <li><a href="#">Log out</a></li>
+      </ul>
+    </nav>
+    <br><br>
+    <h3>Acum vezi profilul lui {{user2.username}}</h3>
+    <div class="Basic Info" align="left">
+        <img src={{user2.url}} alt="Profile Pic" width="150" height="200" >
+        <p>Nume de Utilizator: {{user2.username}}</p>
+        <p>Prenume: {{user2.f_name}}</p>
+        <p>Nume: {{user2.s_name}}</p>
+        <p>Email: {{user2.email}}</p>
+        <p>Vârstă: {{user2.dob}}</p>
+        <p>Sex: {{user2.gender}}</p>
+        <p>Oraş: {{user2.city}}</p>
+    </div>
+    <div class="Extra Info">
+      <p>Descriere presonală :{{user2.description}}</p>
+      <p>Ocupaţie: {{user2.ocupation}}</p>
+      <p>Nivel curăţenie: {{user2.tidyness}}</p>
+      <p>Nivel musafiri: {{user2.guests}}</p>
+      <p>Tip personalitate predominant: {{user2.personality}}</p>
+    </div>
+
+  </body>
+</html>

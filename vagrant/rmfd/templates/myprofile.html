@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profilul Meu</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Profilul meu</a></li>
+        <li><a href="#">Pagina Principală</a></li>
+        <li><a href="#">Despre</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Bine ai venit {{user.f_name}} !</a></li>
+        <li><a href="#">Log out</a></li>
+      </ul>
+    </nav>
+    <br><br>
+    <div class="Basic Info" align="left">
+        <img src="http://assets.nydailynews.com/polopoly_fs/1.1344824.1368642299!/img/httpImage/image.jpg_gen/derivatives/article_970/ford-homer-simpson.jpg" alt="Profile Pic" width="150" height="200" >
+        <p>Nume de Utilizator: {{user.username}}</p>
+        <p>Prenume: {{user.f_name}}</p>
+        <p>Nume: {{user.s_name}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Vârstă: {{user.dob}}</p>
+        <p>Sex: {{user.gender}}</p>
+        <p>Oraş: {{user.city}}</p>
+    </div>
+    <div class="Extra Info">
+      <p>Descriere presonală :{{user.description}}</p>
+      <p>Ocupaţie: {{user.ocupation}}</p>
+      <p>Nivel curăţenie: {{user.tidyness}}</p>
+      <p>Nivel musafiri: {{user.guests}}</p>
+      <p>Tip personalitate predominant: {{user.personality}}</p>
+    </div>
+
+  </body>
+</html>

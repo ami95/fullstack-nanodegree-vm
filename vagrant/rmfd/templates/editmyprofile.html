@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profilul Meu</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Profilul meu</a></li>
+        <li><a href="#">Pagina Principală</a></li>
+        <li><a href="#">Despre</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Bine ai venit {{user.f_name}} !</a></li>
+        <li><a href="#">Log out</a></li>
+      </ul>
+    </nav>
+    <br><br>
+    <h3>Aici îţi poţi edita profilul</h3>
+    <div class="Basic Info" align="left">
+        <img src="http://assets.nydailynews.com/polopoly_fs/1.1344824.1368642299!/img/httpImage/image.jpg_gen/derivatives/article_970/ford-homer-simpson.jpg" alt="Profile Pic" width="150" height="200" >
+        <input type="submit" value="Schimbă imaginea de profil">
+        <p>Nume de Utilizator: {{user.username}} <input type="text" size="30" name="nume_utilizator" placeholder="Nume Utilizator Nou"></p>
+        <p>Prenume: {{user.f_name}} <input type="text" size="30" name="prenume" placeholder="Prenume Nou"></p>
+        <p>Nume: {{user.s_name}} <input type="text" size="30" name="nume" placeholder="Nume Nou"> </p>
+        <p>Email: {{user.email}} <input type="email" size="30" name="email" placeholder="Email Nou"></p>
+        <p>Vârstă: {{user.dob}} <input type="date" name="data_nastere" placeholder="zz-ll-aaaa"> </p>
+        <p>Sex: {{user.gender}} <input type="date" name="dsex" placeholder="Sex Nou"> </p>
+        <p>Oraş: {{user.city}} <input type="date" name="oras" placeholder="Oraş Nou"> </p>
+    </div>
+    <div class="Extra Info">
+      <textarea style="width:96%;height:90px;">{{user.description}}</textarea>
+      <p>Ocupaţie: {{user.ocupation}} <input type="text" size="30" name="ocupatie" placeholder="Ocupaţie nouă"> </p>
+      <p>Nivel curăţenie: {{user.tidyness}}</p>
+
+      <input type="range" min="0" max="100">
+
+      <br><br>
+      <p>Nivel musafiri: {{user.guests}}</p>
+
+      <input type="range" min="0" max="100">
+
+      <br><br>
+      <p>Tip personalitate predominant: {{user.personality}} </p>
+      <select>
+        <option value="" disabled="disabled" selected="selected">Tip personalitate predominant nou:</option>
+        <option value="1">Coleric</option>
+        <option value="2">Sangvinic</option>
+        <option value="3">Flegmatic</option>
+        <option value="4">Melancolic</option>
+      </select>
+      <br><br><br>
+      <input type="submit" value="Salvează modificările !">
+      <br><br><br>
+    </div>
+
+  </body>
+</html>

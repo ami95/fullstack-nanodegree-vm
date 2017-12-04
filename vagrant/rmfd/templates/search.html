@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Caută</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Profilul meu</a></li>
+        <li><a href="#">Pagina Principală</a></li>
+        <li><a href="#">Despre</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Bine ai venit  !</a></li>
+        <li><a href="#">Log out</a></li>
+      </ul>
+    </nav>
+    <br><br>
+    <div class="FiltreCautare:">
+      <form action="#" method="post">
+          <p>Oraş: <input type="text" size="30" name="nume" placeholder="Nume"></p>
+          <p>Vârstă: <input type="int" size="5" name="nume" placeholder="min"> <input type="int" size="5" name="nume" placeholder="max"></p>
+          <p>Sex:   <input type="checkbox" name="Masculin" value="m" checked> Masculin <input type="checkbox" name="Feminin" value="f" checked> Feminin </p>
+          <p>Nivel curăţenie:</p>
+          Min:<input type="range" min="0" max="100">
+          Max:<input type="range" min="0" max="100">
+          <br><br>
+          <p>Nivel musafiri:</p>
+          Min:<input type="range" min="0" max="100">
+          Max:<input type="range" min="0" max="100">
+          <br><br>
+          <select>
+            <option value="" disabled="disabled" selected="selected">Tip personalitate predominant:</option>
+            <option value="1">Coleric</option>
+            <option value="2">Sangvinic</option>
+            <option value="3">Flegmatic</option>
+            <option value="4">Melancolic</option>
+          </select>
+          <input type="submit" value="Vezi rezultatele !">
+          <br><br><br>
+      </form>
+    </div>
+
+    <div class="RezultateCautare">
+        {% for u in users %}
+      <div class="IndividualUser">
+          <img src={{u.url}} alt="Profile Pic" width="150" height="200" >
+          <p>{{u.f_name}} {{u.s_name}}</p>
+
+          <p>{{u.description}}</p>
+          <input type="submit" value="Da"> <input type="submit" value="Nu"> <input type="submit" value="Vezi Profil">
+      </div>
+      <br><br>
+        {% endfor %}
+    </div>
+
+  </body>
+</html>
